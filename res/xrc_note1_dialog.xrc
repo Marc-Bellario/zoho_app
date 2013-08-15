@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxDialog" name="MyDialog2">
+		<style>wxDEFAULT_DIALOG_STYLE</style>
+		<size>341,322</size>
+		<title></title>
+		<centered>1</centered>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxEXPAND | wxALL</flag>
+				<border>5</border>
+				<object class="wxPanel" name="m_panel2">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxFlexGridSizer">
+						<rows>4</rows>
+						<cols>2</cols>
+						<vgap>0</vgap>
+						<hgap>0</hgap>
+						<growablecols></growablecols>
+						<growablerows></growablerows>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxStaticText" name="lb_id">
+								<label>ID</label>
+								<wrap>-1</wrap>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxTextCtrl" name="tb_id">
+								<value></value>
+								<maxlength>0</maxlength>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxStaticText" name="lb_note">
+								<label>Note</label>
+								<wrap>-1</wrap>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxTextCtrl" name="tb_note">
+								<style>wxTE_MULTILINE</style>
+								<size>150,160</size>
+								<value></value>
+								<maxlength>0</maxlength>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="m_button5">
+								<label>Update</label>
+								<default>0</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="m_button6">
+								<label>Cancel</label>
+								<default>0</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxHyperlinkCtrl" name="m_hyperlink1">
+								<label>&lt;&lt;&lt;</label>
+								<url>http://www.wxformbuilder.org</url>
+								<style>wxHL_DEFAULT_STYLE</style>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxHyperlinkCtrl" name="m_hyperlink2">
+								<label>&gt;&gt;&gt;</label>
+								<url>http://www.wxformbuilder.org</url>
+								<style>wxHL_DEFAULT_STYLE</style>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>

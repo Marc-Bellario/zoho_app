@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxDialog" name="MyDialog3">
+		<style>wxDEFAULT_DIALOG_STYLE</style>
+		<size>276,282</size>
+		<title>Search Dialog</title>
+		<centered>1</centered>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxEXPAND | wxALL</flag>
+				<border>5</border>
+				<object class="wxPanel" name="m_panel3">
+					<style>wxTAB_TRAVERSAL</style>
+					<object class="wxFlexGridSizer">
+						<rows>8</rows>
+						<cols>2</cols>
+						<vgap>0</vgap>
+						<hgap>0</hgap>
+						<growablecols></growablecols>
+						<growablerows></growablerows>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxStaticText" name="m_staticText16">
+								<label>Search Type\n---------------</label>
+								<wrap>-1</wrap>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxStaticText" name="m_staticText19">
+								<label>Search Value\n---------------</label>
+								<wrap>-1</wrap>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxCheckBox" name="ckType">
+								<label>Type</label>
+								<checked>0</checked>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxComboBox" name="cbType">
+								<value>Combo!</value>
+								<content>
+									<item>friend</item>
+									<item>family</item>
+									<item>all</item>
+								</content>
+
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxCheckBox" name="ckState">
+								<label>State</label>
+								<checked>0</checked>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxComboBox" name="cbState">
+								<value>Combo!</value>
+								<content>
+									<item>Florida</item>
+									<item>Minnesota</item>
+									<item>Wisconsin</item>
+                                                                       <item>Illinois</item>
+                                                                      <item>Alabama,USA</item>
+                                                                     <item>Alaska,USA</item>
+                                                                    <item>Arizona,USA</item>
+                                                                    <item>Arkansas,USA</item>
+                                                                   <item>California,USA</item>
+                                                                      <item>Colorado,USA</item>
+                                                                    <item>Connecticut,USA</item>
+                                                                   <item>Delaware,USA</item>
+                                                                    <item>Florida,USA</item>
+                                                                   <item>Georgia,USA</item>
+                                                                  <item>Hawaii,USA</item>
+                                                                <item>Idaho,USA</item>
+                                                                   <item>Illinois,USA</item>
+                                                                 <item>Indiana,USA</item>
+                                                                  <item>Iowa,USA</item>
+                                                                 <item>Kansas,USA</item>
+                                                                  <item>Kentucky,USA</item>
+                                                                 <item>Louisiana,USA</item>
+                                                                <item>Maine,USA</item>
+                                                               <item>Maryland,USA</item>
+                                                              <item>Massachusetts,USA</item>
+                                                              <item>Michigan,USA</item>
+                                                                  <item>Minnesota,USA</item>
+                                                             <item>Mississippi,USA</item>
+                                                           <item>Missouri,USA</item>
+                                                            <item>Montana,USA</item>
+                                                            <item>Nebraska,USA</item>
+                                                             <item>Nevada,USA</item>
+                                                             <item>New Hampshire,USA</item>
+                                                            <item>New Jersey,USA</item>
+                                                           <item>New Mexico,USA</item>
+                                                           <item>New York,USA</item>
+                                                           <item>North Carolina,USA</item>
+                                                           <item>North Dakota,USA</item>
+                                                           <item>Ohio,USA</item>
+                                                           <item>Oklahoma,USA</item>
+                                                            <item>Oregon,USA</item>
+                                                              <item>Pennsylvania,USA</item>
+                                                            <item>Puerto Rico,USA</item>
+                                                             <item>Rhode Island,USA</item>
+                                                             <item>South Carolina,USA</item>
+                                                              <item>South Dakota,USA</item>
+                                                             <item>Tennessee,USA</item>
+                                                            <item>Texas,USA</item>
+                                                              <item>Utah,USA</item>
+                                                                  <item>Vermont,USA</item>
+                                                              <item>Virginia,USA</item>
+                                                                <item>Washington,USA</item>
+                                                               <item>Washington, DC,USA</item>
+                                                                <item>West Virginia,USA</item>
+                                                               <item>Wisconsin,USA</item>
+                                                               <item>Wyoming,USA</item>
+                                                               <item>Alberta,CA</item>
+                                                                <item>British Columbia,CA</item>
+                                                                  <item>Manitoba,CA</item>
+                                                                 <item>New Brunswick,CA</item>
+                                                                 <item>Newfoundland,CA </item>
+                                                                 <item>Labrador,CA </item>
+                                                                <item>Nova Scotia,CA</item>
+                                                                 <item>Ontario,CA</item>
+                                                                  <item>Prince Edward Island,CA</item>
+                                                                  <item>Quebec,CA</item>
+                                                                   <item>Saskatchewan,CA</item>
+								</content>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxCheckBox" name="ckDateBefore">
+								<label>Date Before</label>
+								<checked>0</checked>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxCheckBox" name="ckDateAfter">
+								<label>Date After</label>
+								<checked>0</checked>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxDatePickerCtrl" name="m_datePick02">
+								<style>wxDP_DEFAULT</style>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxDatePickerCtrl" name="m_datePick03">
+								<style>wxDP_DEFAULT</style>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxCheckBox" name="ckName">
+								<label>Last Name</label>
+								<checked>0</checked>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxTextCtrl" name="tbName">
+								<value></value>
+								<maxlength>0</maxlength>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="btnSearch">
+								<label>Search</label>
+								<default>0</default>
+							</object>
+						</object>
+						<object class="sizeritem">
+							<option>0</option>
+							<flag>wxALL</flag>
+							<border>5</border>
+							<object class="wxButton" name="btnCancel">
+								<label>Cancel</label>
+								<default>0</default>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>
