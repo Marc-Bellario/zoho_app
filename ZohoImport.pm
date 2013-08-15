@@ -41,6 +41,7 @@ my @g_data_array;
 sub ImportNewData
 {
     use YAML qw(LoadFile);
+    use Data::Dumper;
 
     my $current_grid_index = shift;
    
@@ -90,14 +91,86 @@ my $xml = new XML::Simple;
 
 # read XML file
 my $data = $xml->XMLin($response->content);
-my @array = @{$data->{result}->{rows}->{row}};
+#my @array = @{$data->{result}->{rows}->{row}};
+print " what is : $data->{result}->{rows}->{row}\n";
+my $reftype = ref $data->{result}->{rows}->{row};
+print " type is: $reftype\n";
+my @array;
+my @local_array;
+my @data_array;
+
+if ($reftype eq "HASH")
+{
+    my %d_hash = %{$data->{result}->{rows}->{row}};
+#    $array[0] = ( 'column' => $d_hash{column} );
+    print "dumper\n";
+#    print Dumper(@array);
+    print "===========";
+    
+          my %local_hash;
+#	print " col - $i : $array[$i]->{column}->{Column3}->{content}\n";
+    $data_array[0] = $local_hash{LeadID} = $d_hash{column}->{LeadID}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[1] = $local_hash{Lead_BusinessName} = $d_hash{column}->{Lead_BusinessName}->{content};
+    print " Lead_BusinessName: -> $local_hash{Lead_BusinessName} --- \n";
+    $data_array[2] = $local_hash{Lead_FirstName} = $d_hash{column}->{Lead_FirstName}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[3] = $local_hash{Lead_LastName} = $d_hash{column}->{Lead_LastName}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[4] = $local_hash{Lead_BusinessPhone} = $d_hash{column}->{Lead_BusinessPhone}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[5] = $local_hash{Lead_MobilePhone} = $d_hash{column}->{Lead_MobilePhone}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[6] = $local_hash{Lead_Email} = $d_hash{column}->{Lead_Email}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[7] = $local_hash{Lead_Dealer_ReferedTo} = $d_hash{column}->{Lead_Dealer_ReferedTo}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[8] = $local_hash{Lead_ReferalDate} = $d_hash{column}->{Lead_ReferalDate}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[9] = $local_hash{Lead_Street} = $d_hash{column}->{Lead_Street}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[10] = $local_hash{Lead_City} = $d_hash{column}->{Lead_City}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[11] = $local_hash{Lead_State} = $d_hash{column}->{Lead_State}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[12] = $local_hash{Lead_Zip} = $d_hash{column}->{Lead_Zip}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[13] = $local_hash{Lead_Equipment_Type} = $d_hash{column}->{Lead_Equipment_Type}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[14] = $local_hash{Lead_Model} = ".";
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[15] = $local_hash{Lead_Notes} = $d_hash{column}->{Lead_Notes}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[16] = $local_hash{Lead_Origin} = $d_hash{column}->{Lead_Origin}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[17] = $local_hash{Refered_By_Data} = $d_hash{column}->{Refered_By_Data}->{content};
+#    print " $i: -> $local_hash{Col1} --- ";
+    $data_array[18] = $local_hash{Finance_Required} = $d_hash{column}->{Finance_Required}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[19] = $local_hash{Sales_Status} = $d_hash{column}->{Sales_Status}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[20] = $local_hash{Sales_Quote} = $d_hash{column}->{Sales_Quote}->{content};
+#    print " $i: -> $local_hash{Col2} --- ";
+    $data_array[21] = $local_hash{Sales_Quote_Other} = $d_hash{column}->{Sales_Quote_Other}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+    $data_array[22] = $local_hash{Lead_Sales_Create_Date} = $d_hash{column}->{Lead_Sales_Create_Date}->{content};
+#    print " $i: -> $local_hash{Col3} --- \n";
+
+ create_db_rec(@data_array);
+#create_test(@data_array);
+$local_array[0] = \%local_hash;
+
+}
+else
+{
+    @array = @{$data->{result}->{rows}->{row}};
+   
+
 print " size: $#array\n";
 my $size = $#array + 1;
 
 my $i = 0;
 #my %local_hash;
-my @local_array;
-my @data_array;
 
   while ($i < $size)
   {
@@ -155,10 +228,10 @@ my @data_array;
 $local_array[$i] = \%local_hash;
         $i++;
   }
-
+}
  
   @g_data_array = @local_array; 
-  
+ 
 #  get_data($current_grid_index);
 #  create_db_rec();
   delete_all_imported();
